@@ -1,0 +1,41 @@
+<html>
+  <header>
+    <link href="/assets/books.scss" rel="stylesheet">
+
+  </header>
+
+  <body>
+
+
+    <% if flash[:success] %>
+      <p id="notice"><%= flash[:success] %></p>
+    <% end %>
+
+
+    <h1>Editing Book</h1>
+    <!-- form_with部分 -->
+    <%= form_with model:@book, local: true do |f| %>
+      <h4>Title</h4>
+      <%= f.text_field :title %>
+      <h4>Body</h4>
+      <%= f.text_area :body %>
+      <%= f.submit 'Update Book' %>
+    <% end %>
+
+    <tr>
+      <td><%= link_to 'Show', book_path(@book) %></td>
+        |
+      <td><%= link_to 'Back', books_path %></td>
+
+    </tr>
+
+
+
+
+
+
+
+
+  </body>
+
+</html>
